@@ -1,0 +1,67 @@
+<body>
+<nav class="navbar bg-dark text-white justify-content-between ">
+  <a class="navbar-brand">League of Legends: Tips</a>
+  <form class="form-inline">
+    <input [(ngModel)]="summonerName" name="summonerName" class="form-control mr-sm-2" type="search" placeholder="Summoner name" aria-label="Search" >
+    <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="searchSummoner()">Search</button>
+  </form>
+</nav>
+<!-- <ul *ngFor="let summoner of connectorService.summonerInfo">
+<p class="card-text"> Summoner info: {{summoner.name}}</p>
+</ul> -->
+
+
+<div class="card bg-dark text-white">
+  <div class="card-body text-center" *ngIf="connectorService.summonerInfo.summoner_name != ''">
+    <p class="card-text"> {{connectorService.summonerInfo.summoner_name}}</p>
+    <img [src]=profileIconUrl style="border-radius: 50%; height:100px;" >
+    <p class="card-text"> Nivel: {{connectorService.summonerInfo.summoner_level}} </p>
+
+  </div>
+
+  <!-- <div class="card bg-dark text-white">
+      <div class="card-body" *ngIf="connectorService.summonerInfo.summoner_name != ''">
+        <p class="card-text"> Liga: {{connectorService.summonerInfo.summoner_league[0]}} </p>
+        <p class="card-text"> Division: {{connectorService.summonerInfo.summoner_league[1]}} </p>
+        <p class="card-text"> Partidas: {{connectorService.summonerInfo.n_games}} </p>
+        <p class="card-text"> KDA: {{connectorService.summonerInfo.avg_kda}} </p>
+        <p class="card-text"> Oro p/m: {{connectorService.summonerInfo.avg_gpm}} </p>
+        <p class="card-text"> Minions p/m: {{connectorService.summonerInfo.avg_cspm}} </p>
+        <p class="card-text"> Daño p/m: {{connectorService.summonerInfo.avg_dmgpm_to_champions}} </p>
+        <p class="card-text"> Puntaje de visión: {{connectorService.summonerInfo.avg_vision_score}} </p>
+      </div>
+  </div> -->
+
+  <div *ngIf="connectorService.summonerInfo.summoner_name != ''">
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Liga</th>
+      <th scope="col">Division</th>
+      <th scope="col">Partidas</th>
+      <th scope="col">KDA</th>
+      <th scope="col">Oro p/m</th>
+      <th scope="col">Minions p/m</th>
+      <th scope="col">Daño p/m</th>
+      <th scope="col">Puntaje de visión</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>  <img [src]=leagueIconUrl style="border-radius: 50%; height:30px;" ></td>
+      <!-- <td>{{connectorService.summonerInfo.summoner_league[0]}}</td> -->
+      <td>{{connectorService.summonerInfo.summoner_league[1]}}</td>
+      <td>{{connectorService.summonerInfo.n_games}}</td>
+      <td>{{connectorService.summonerInfo.avg_kda}}</td>
+      <td>{{connectorService.summonerInfo.avg_gpm}}</td>
+      <td>{{connectorService.summonerInfo.avg_cspm}}</td>
+      <td>{{connectorService.summonerInfo.avg_dmgpm_to_champions}}</td>
+      <td>{{connectorService.summonerInfo.avg_vision_score}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+  </div>
+</div>
+</body>
