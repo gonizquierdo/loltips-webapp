@@ -43,7 +43,7 @@ export class LandingComponent implements OnInit {
         this.summonerInfo = data;
         console.log(data);
         this.profileIconUrl = 'http://ddragon.leagueoflegends.com/cdn/8.16.1/img/profileicon/'+ this.summonerInfo.summoner_icon+'.png';
-        this.leagueIconUrl = '../../assets/'+ this.summonerInfo.summoner_league[0]+ '.png';
+        this.leagueIconUrl = 'assets/'+ this.summonerInfo.summoner_league[0]+ '.png';
         console.log("Summoner loaded!")
       });
     }
