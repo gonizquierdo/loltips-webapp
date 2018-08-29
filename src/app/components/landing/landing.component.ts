@@ -20,16 +20,29 @@ export class LandingComponent implements OnInit {
   constructor(private connectorService:ConnectorService) { }
 
   ngOnInit() {
+    this.summonerInfo = {
+      n_games: 0 ,
+      avg_kda: 0,
+      avg_vision_score: 0,
+      avg_gpm: 0,
+      avg_cspm: 0,
+      avg_dmgpm_to_champions: 0,
+      summoner_name: "",
+      summoner_level: 0,
+      summoner_icon: 0,
+      summoner_league: null,
+    }
   }
 
   searchSummoner()
   {
     // this.connectorService.searchSummoner(this.summonerName).subscribe();
+    console.log("Loading summoner ...");
     this.connectorService.searchSummoner(this.summonerName).subscribe(data =>{
-      console.log(data)
       this.summonerInfo = data;
-      this.profileIconUrl = 'http://ddragon.leagueoflegends.com/cdn/8.16.1/img/profileicon/'+this.summonerInfo.summoner_icon+'.png'
-      this.leagueIconUrl = '../../assets/'+this.summonerInfo.summoner_league[0]+'.png'
+      this.profileIconUrl = 'http://ddragon.leagueoflegends.com/cdn/8.16.1/img/profileicon/'+ this.summonerInfo.summoner_icon+'.png';
+      this.leagueIconUrl = '../../assets/'+ this.summonerInfo.summoner_league[0]+ '.png';
+      console.log("Summoner loaded!")
     });
 
     

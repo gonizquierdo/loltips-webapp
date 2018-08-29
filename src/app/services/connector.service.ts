@@ -25,14 +25,14 @@ export class ConnectorService {
 }
 
 export interface Summoner{  
-  n_games: "",
-  avg_kda: "",
-  avg_vision_score: "",
-  avg_gpm: "",
-  avg_cspm: "",
-  avg_dmgpm_to_champions: "",
-  summoner_name: "",
-  summoner_level:"",
-  summoner_icon: "",
-  summoner_league: "",
+  n_games: Number,
+  avg_kda: Number,
+  avg_vision_score: Number,
+  avg_gpm: Number,
+  avg_cspm: Number,
+  avg_dmgpm_to_champions: Number,
+  summoner_name: String,
+  summoner_level: Number,
+  summoner_icon: Number,
+  summoner_league: Object,
 }
