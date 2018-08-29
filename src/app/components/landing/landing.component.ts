@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConnectorService } from '../../services/connector.service';
+import { ConnectorService, Summoner } from '../../services/connector.service';
 
 import { Observable } from 'rxjs'
 
@@ -10,21 +10,12 @@ import { Observable } from 'rxjs'
 })
 export class LandingComponent implements OnInit {
 
+  
   summonerName:string;
   profileIconUrl:string;
   leagueIconUrl:string;
-  summonerInfo:object = {
-    n_games: "",
-    avg_kda: "",
-    avg_vision_score: "",
-    avg_gpm: "",
-    avg_cspm: "",
-    avg_dmgpm_to_champions: "",
-    summoner_name: "",
-    summoner_level:"",
-    summoner_icon: "",
-    summoner_league: "",
-  };
+  summonerInfo:Summoner;
+  
 
   constructor(private connectorService:ConnectorService) { }
 
